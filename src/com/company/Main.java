@@ -6,75 +6,81 @@ import java.util.List;
 
 
 public class Main {
-
-
-
     public static void main(String[] args) {
 
-        // Testpart DANIEL
-        System.out.println("Testpart DANIEL:");
-        System.out.println("");
 
+// Würfel anlegen
+        Die Die0 = new Die(1, 6);
+
+// Spieler anlegen
         Player Player1 = new Player("Daniel", 1000, "rotes_Auto");
-        List<ImmoTest> ImmobilienListe = new ArrayList<>();
+        Player Player2 = new Player("Fabian", 5000, "gelbes_Flugzeug");
 
-        ImmobilienListe.add(new StraßeTest(0,"Los",0));
-        ImmobilienListe.add(new StraßeTest(1,"Schlossstraße",100));
-        ImmobilienListe.add(new StraßeTest(2,"Grantham-Allee",1100));
-        ImmobilienListe.add(new WerkTest(3,"Wasserwerk",100));
-        ImmobilienListe.add(new StraßeTest(4,"Hauptstraße",100));
-        ImmobilienListe.add(new StraßeTest(5,"B56",100));
+// Wertanlagen Liste anlegen
+        List<Wertanlage> WertanlagenListe = new ArrayList<>();
 
+// Straßen und Werke anlegen
+        WertanlagenListe.add(new Strasse("Los",0,0,0));
+        WertanlagenListe.add(new Strasse("Schlossstraße",400,50,1));
+        WertanlagenListe.add(new Strasse("Grantham-Allee",1100,60,2));
+        WertanlagenListe.add(new Werk("Wasserwerk",100,20,3));
+        WertanlagenListe.add(new Strasse("Hauptstraße",700,80,4));
+        WertanlagenListe.add(new Strasse("B56",100,10,5));
 
-
-
-        Player1.kaufen(0, ImmobilienListe);
-        Player1.kaufen(1, ImmobilienListe);
-        Player1.kaufen(2, ImmobilienListe);
-        Player1.kaufen(6, ImmobilienListe);
-
-        System.out.println();
-        Player1.kaufen(1, ImmobilienListe);
+//Alle Straßen anzeigen
+        for(Wertanlage i : WertanlagenListe) { i.anzeigen(); }
 
 
-        //Die Die0 = new Die(1, 6);
+        Player1.kaufen(0, WertanlagenListe);
+        Player1.kaufen(1, WertanlagenListe);
+        Player1.kaufen(2, WertanlagenListe);
+        Player1.kaufen(6, WertanlagenListe);
 
-        //for(int i=0; i<9; i++){
-        //    System.out.println (Die0.roll());
-        //}
+        Player2.kaufen(3, WertanlagenListe);
+
+        Player1.kaufen(1, WertanlagenListe);
+
+//Alle Straßen anzeigen
+        for(Wertanlage i : WertanlagenListe) { i.anzeigen(); }
+
+
+// Testwürfeln
+        for(int i=0; i<5; i++){
+            System.out.println (Die0.roll());
+        }
 
 
         // Testpart FABIAN
-        System.out.println("");
-        System.out.println("");
-        System.out.println("Testpart FABIAN:");
-        System.out.println("");
-
-        // Teststraßen anlegen
-        System.out.println("Karten werden angelegt (Straße und Werk) und angezeigt:");
-
-        Strasse strasse1 = new Strasse("Parkstraße", 300, 100, 4);
-        Werk werk1 = new Werk ("Wasserwerk", 200, 50, 8);
-
-        strasse1.anzeigen();
-        werk1.anzeigen();
-
-        // Besitzer der Teststraßen zuweisen
-        // In der Endumsetzung mit "SpielerX.name"
-        System.out.println("Besitzer der Karten werden festgelegt und die Karten angezeigt:");
-
-        strasse1.setBesitzer("Fabian");
-        werk1.setBesitzer("Daniel");
-
-        strasse1.anzeigen();
-        werk1.anzeigen();
-
-        // Besitzer von strasse2 wechseln
-        System.out.println("Besitzer von strasse2 wechselt; Karten werden angezeigt:");
-
-        werk1.besitzerWechseln("Fabian");
-
-        strasse1.anzeigen();
-        werk1.anzeigen();
+//        System.out.println("");
+//        System.out.println("");
+//        System.out.println("Testpart FABIAN:");
+//        System.out.println("");
+//
+//        // Teststraßen anlegen
+//        System.out.println("Karten werden angelegt (Straße und Werk) und angezeigt:");
+//
+//        Strasse strasse1 = new Strasse("Parkstraße", 300, 100, 4);
+//        Werk werk1 = new Werk ("Wasserwerk", 200, 50, 8);
+//
+//        strasse1.anzeigen();
+//        werk1.anzeigen();
+//
+//        // Besitzer der Teststraßen zuweisen
+//        // In der Endumsetzung mit "SpielerX.name"
+//        System.out.println("Besitzer der Karten werden festgelegt und die Karten angezeigt:");
+//
+//        strasse1.setBesitzer("Fabian");
+//        werk1.setBesitzer("Daniel");
+//
+//        strasse1.anzeigen();
+//        werk1.anzeigen();
+//
+//        // Besitzer von strasse2 wechseln
+//        System.out.println("Besitzer von strasse2 wechselt; Karten werden angezeigt:");
+//
+//        werk1.besitzerWechseln("Fabian");
+//
+//        strasse1.anzeigen();
+//        werk1.anzeigen();
     }
 }
