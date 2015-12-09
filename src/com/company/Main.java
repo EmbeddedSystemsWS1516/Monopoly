@@ -45,6 +45,7 @@ public class Main {
 
 
 // Testwürfeln
+        System.out.println("Mal das Würfeln testen:");
         for(int i=0; i<5; i++){
             System.out.println (Die0.roll());
         }
