@@ -17,7 +17,7 @@ public class Player {
         this.symbol = symbol_konstr;
     }
 
-    String getName(){
+    public String getName(){
         return name;
     }
 
