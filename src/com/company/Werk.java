@@ -16,7 +16,7 @@ public class Werk extends Wertanlage {
 
     Werk(String name, int wert, int grundmiete, int position){
         setName(name);
-        setBesitzer(null);
+        setBesitzer("Bank");
         setGrundMiete(grundmiete);
         this.mietfaktor = 0;
         setWert(wert);

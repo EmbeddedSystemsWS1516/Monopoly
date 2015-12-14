@@ -15,7 +15,7 @@ public class Strasse extends Wertanlage {
 
     Strasse(String name, int wert, int grundmiete, int position){
         setName(name);
-        setBesitzer(null);
+        setBesitzer("Bank");
         setGrundMiete(grundmiete);
         this.hausanzahl = 0;
         setWert(wert);
